@@ -33,7 +33,6 @@ namespace lmwohlfart.tsbw.WpfMvvm.Logic.Ui.ViewModel
             {
                 Things = new ObservableCollection<Thing>();
                 WindowTitle = "MainWindow";
-                Input = "Hallo Welt";
             }
         }
 
@@ -50,6 +49,7 @@ namespace lmwohlfart.tsbw.WpfMvvm.Logic.Ui.ViewModel
                         if (!string.IsNullOrWhiteSpace(Input))
                         {
                             Things.Add(new Thing(Input));
+                            Input = "";
                         }
                     });
                 }
