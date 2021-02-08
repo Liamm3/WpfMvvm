@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lmwohlfart.tsbw.WpfMvvm.Ui.Desktop"
         mc:Ignorable="d"
-        Title="{Binding WindowTitle, Mode=OneWay}" Height="450" Width="800"
-        DataContext="{Binding Main, Source={StaticResource Locator}}" IsEnabled="False">
+        Title="{Binding WindowTitle, Mode=OneWay}" Height="300" Width="300"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label>Gib irgendwas ein:</Label>
+            <TextBox Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Command="{Binding OnButtonClick}">Add thing</Button>
+        </StackPanel>
+        <DataGrid Grid.Column="1"
+                  ItemsSource="{Binding Things}"
+                  VerticalAlignment="Stretch"
+                  IsEnabled="False"
+                  ColumnWidth="*" />
     </Grid>
 </Window>
