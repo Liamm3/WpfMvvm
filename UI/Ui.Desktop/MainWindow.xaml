@@ -16,7 +16,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label>Gib irgendwas ein:</Label>
+            <Label>Name of the thing:</Label>
             <TextBox Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" />
             <Button Command="{Binding OnButtonClick}">Add thing</Button>
         </StackPanel>
